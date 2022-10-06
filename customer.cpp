@@ -1,8 +1,6 @@
 #include "customer.h"
 #include "lib.h"
 
-int customers_i1 = 0;
-
 void set_customer(customer *customer_main, const char* fio, int *customer_i) {
 	
 	customer customer_help;
@@ -14,8 +12,14 @@ void set_customer(customer *customer_main, const char* fio, int *customer_i) {
 
 void input_customer(customer* customer, int customers_i) {
 	char fio[MAX];
-	printf("\nВведите ФИО покупателя: ");
-	scanf("%s", fio);
+	int f;
+	do {
+		f = 0;
+		printf("\nВведите ФИО покупателя: ");
+		scanf("%s", fio);
+		f = str_check(fio);
+	} while (f == 1);
+	
 	strcpy(customer->fio, fio);
 	customer->id = customers_i + 1;
 }
@@ -23,9 +27,8 @@ void input_customer(customer* customer, int customers_i) {
 void output_customer(customer customer[], int number) {
 	printf("<id> <ФИО>");
 	for (int j = 0; j < number; j++) {
-		printf("\n%3d%6s", customer[j].id, customer[j].fio);
+		printf("\n%2d%10s", customer[j].id, customer[j].fio);
 	}
-	
 }
 
 

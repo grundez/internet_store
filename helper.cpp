@@ -22,6 +22,6 @@ void input_helper(helper* helper_main, int helper_i) {
 void output_helper(helper helper[], int number) {
 	printf("<№><Консультант><Количество ответов>");
 	for (int j = 0; j < number; j++) {
-		printf("\n%3d%6s%7d", number + 1, helper[number].fio, helper[number].help_count);
+		printf("\n%2d%10s%12d", j + 1, helper[j].fio, helper[j].help_count);
 	}
 }

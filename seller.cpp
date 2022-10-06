@@ -30,7 +30,7 @@ void input_seller(seller* seller_main, int seller_i) {
 void output_seller(seller seller[], int number) {
 	printf("<№><Продавец><Оценка>");
 	for (int j = 0; j < number; j++) {
-		printf("\n%3d%6s%6.2lf", number + 1, seller[number].name, seller[number].mark);
+		printf("\n%2d%7s%10.2lf", j+1, seller[j].name, seller[j].mark);
 	}
 }
 

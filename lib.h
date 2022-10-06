@@ -10,9 +10,12 @@
 #include "product.h"
 #include "seller.h"
 #include "helper.h"
+#include "table.h"
 
-int str_check(char* str);
-int int_check(char* a);
+
+int double_check(char a[]);
+int int_check(char a[]);
+int str_check(char str[]);
 
 
 

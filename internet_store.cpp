@@ -2,14 +2,14 @@
 #include <iostream>
 #include "table.h"
 
-int table_active = 0;
+
 
 int main()
 {
 	setlocale(LC_ALL, "Russian"); 
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-	int i = 0, customer_i = 0, product_i = 0, seller_i = 0, helper_i = 0, table_i=0, number_seller, number_product, number_customer, number_helper;
+	int i = 0, customer_i = 0, product_i = 0, seller_i = 0, helper_i = 0, table_i=0, number_seller, number_product, number_customer, number_helper, f;
 	do {
 		table table[MAX];
 		customer customer[MAX];
@@ -21,16 +21,17 @@ int main()
 			printf("\t1  Ввести новые данные\n");
 			printf("\t2  Вывод списка\n");
 			printf("\n\tДля выхода нажмите ESC\n");
+			set_table(&table[table_i], "nike", "air monarch", 2, "Maksim", "-", &table_i);
 			switch (_getch()) {
 			case '1': {
 				system("cls"); 
-				printf("\tВвод данных\n\n");
+				printf("\t\tВвод данных\n\n");
 				printf("\t1  Ввести продавца\n");
 				printf("\t2  Ввести покупателя\n");
 				printf("\t3  Ввести товар\n");
 				printf("\t4  Ввести консультанта\n");
 				printf("\t5  Ввести таблицу учета\n");
-				printf("\tESC  выход\n");
+				printf("\n\tESC  выход\n");
 				switch (_getch()) {
 				case '1': { 
 					system("cls");
@@ -40,7 +41,7 @@ int main()
 						seller_i++;
 						printf("\nПродолжить - любая кнопка, выйти - ESC\n");
 					} while (_getch()!=27);
-					table_active += 1;
+					
 					break;
 				}
 				case '2': { 
@@ -51,7 +52,7 @@ int main()
 						customer_i++;
 						printf("\nПродолжить - любая кнопка, выйти - ESC\n");
 					} while (_getch() != 27);
-					table_active += 1;
+					
 					break;
 				}
 				case '3': { 
@@ -62,7 +63,7 @@ int main()
 						product_i++;
 						printf("\nПродолжить - любая кнопка, выйти - ESC\n");
 					} while (_getch() != 27);
-					table_active += 1;
+					
 					break;
 				}
 				case '4': { 
@@ -73,40 +74,64 @@ int main()
 						helper_i++;
 						printf("\nПродолжить - любая кнопка, выйти - ESC\n");
 					} while (_getch() != 27);
-					table_active += 1;
+					
 					break;
 				}
 				case '5': {
 					system("cls");
-					if (table_active == 4) {
+
+					do {
+						output_seller(seller, seller_i);
+						printf("\n\nВведите номер продавца: ");
 						do {
-							output_seller(seller, seller_i);
-							printf("\n\nВведите номер продавца: ");
+							f = 0;
 							scanf("%d", &number_seller);
-							table_input_seller(&table[table_i].seller, &seller[number_seller-1]);
+							if (number_seller > seller_i || number_seller < 1)
+							{
+								f = 1;
+							}
+						} while (f == 1);
+						table_input_seller(&table[table_i].seller, &seller[number_seller - 1]);
 
-							output_product(product, product_i);
-							printf("\n\nВведите номер товара: ");
-							scanf("%d", &number_product);
-							table_input_product(&table[table_i].product, &product[number_product-1]);
-
-							output_customer(customer, customer_i);
-							printf("\n\nВведите номер покупателя: ");
+						output_customer(customer, customer_i);
+						printf("\n\nВведите номер покупателя: ");
+						do {
+							f = 0;
 							scanf("%d", &number_customer);
-							table_input_customer(&table[table_i].customer, &customer[number_customer-1]);
+							if (number_customer > customer_i || number_customer < 1)
+							{
+								f = 1;
+							}
+						} while (f == 1);
+						table_input_customer(&table[table_i].customer, &customer[number_customer - 1]);
 
-							output_helper(helper, helper_i);
-							printf("\n\nВведите номер консультанта: ");
+						output_product(product, product_i);
+						printf("\n\nВведите номер товара: ");
+						do {
+							f = 0;
+							scanf("%d", &number_product);
+							if (number_product > product_i || number_product < 1)
+							{
+								f = 1;
+							}
+						} while (f == 1);
+						table_input_product(&table[table_i].product, &product[number_product - 1]);
+
+						output_helper(helper, helper_i);
+						printf("\n\nВведите номер консультанта: ");
+						do {
+							f = 0;
 							scanf("%d", &number_helper);
-							table_input_helper(&table[table_i].helper, &helper[number_helper-1]);
+							if (number_helper > helper_i || number_helper < 1)
+							{
+								f = 1;
+							}
+						} while (f == 1);
+						table_input_helper(&table[table_i].helper, &helper[number_helper - 1]);
 
-							table_i++;
-							printf("\nПродолжить - любая кнопка, выйти - ESC\n");
-						} while (_getch() != 27);
-					}
-					else {
-						printf("\nВведите все таблицы!");
-					}
+						table_i++;
+						printf("\nПродолжить - любая кнопка, выйти - ESC\n");
+					} while (_getch() != 27);
 					break;
 				}
 				case 27:
@@ -120,13 +145,13 @@ int main()
 			}
 			case '2': {			//ВЫВОД ДАННЫХ
 				system("cls"); 
-				printf("\tВывод данных\n\n");
+				printf("\t\tВывод данных\n\n");
 				printf("\t1  Вывести продавца\n");
 				printf("\t2  Вывести покупателя\n");
 				printf("\t3  Вывести товар\n");
 				printf("\t4  Вывести консультанта\n");
 				printf("\t5  Вывести таблицу\n");
-				printf("\tESC  выход\n");
+				printf("\n\tESC  выход\n");
 				
 				switch (_getch()) {
 				case '1': { 
@@ -151,13 +176,7 @@ int main()
 				}
 				case '5': {
 					system("cls");			//ВЫВОД ТАБЛИЦЫ
-					if (table_active == 0)
-					{
-						printf("\nВведите все таблицы!");
-					}
-					else {
-						table_output(table, table_i);
-					}
+					table_output(table, table_i);
 					break;
 				}
 				case 27: 

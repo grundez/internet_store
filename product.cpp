@@ -36,7 +36,7 @@ void input_product(product* product, int product_i) {
 void output_product(product product[], int number) {
 	printf("<№><Название товара><Цена товара><Количество товара><Артикул товара>");
 	for (int j = 0; j < number; j++) {
-		printf("\n3%d%7s%5.2lf%10d%7d", number + 1, product[number].name, product[number].price, product[number].count, product[number].id);
+		printf("\n%3d%12s%15.2lf%15d%15d", j + 1, product[j].name, product[j].price, product[j].count, product[j].id);
 	}
 	
 }
