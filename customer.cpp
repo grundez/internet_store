@@ -20,8 +20,12 @@ void input_customer(customer* customer, int customers_i) {
 	customer->id = customers_i + 1;
 }
 
-void output_customer(customer customer) {
-	printf("\n%d     |     %s", customer.id, customer.fio);
+void output_customer(customer customer[], int number) {
+	printf("<id> <ÔÈÎ>");
+	for (int j = 0; j < number; j++) {
+		printf("\n%3d%6s", customer[j].id, customer[j].fio);
+	}
+	
 }
 
 

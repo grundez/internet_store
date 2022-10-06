@@ -10,4 +10,4 @@ struct customer {
 void set_customer(customer* customer, const char* fio, int *customer_i);
 
 void input_customer(customer* customer, int customers_i);
-void output_customer(customer customer);
+void output_customer(customer customer[], int number);

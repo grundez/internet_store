@@ -8,4 +8,4 @@ struct helper{
 
 void set_helper(helper* helper_main, char const* fio, int help_count, int* helper_i);
 void input_helper(helper* helper_main, int helper_i);
-void output_helper(helper helper);
+void output_helper(helper helper[], int number);
