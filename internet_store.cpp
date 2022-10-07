@@ -21,7 +21,7 @@ int main()
 			printf("\t1  Ввести новые данные\n");
 			printf("\t2  Вывод списка\n");
 			printf("\n\tДля выхода нажмите ESC\n");
-			//set_table(&table[table_i], "nike", "air monarch", 2, "Maksim", "-", &table_i);
+			//table->set_table(&table[table_i], "nike", "air monarch", 2, "Maksim", "-", &table_i);
 			switch (_getch()) {
 			case '1': {
 				system("cls"); 

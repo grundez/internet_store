@@ -1,6 +1,12 @@
 #include "table.h"
 #include "lib.h"
 
+table::table() {
+
+}
+table::~table() {
+
+}
 
 void table::set_table(table* table_main, const char* seller_name, const char* product_name, int count, const char* customer_fio, const char* helper_fio, int *table_i ) {
 	table table_help;
@@ -51,10 +57,9 @@ void table::table_input_helper(table* table_main, helper* helper_help_table, hel
 }
 
 void table::table_output(table table_output[], int number) {
-	*table_output = table_help;
 	printf("<№><Продавец> <Товар> <Количество> <Покупатель> <Консультант>");
 	for (int j = 0; j < number; j++) {
-		printf("\n%2d%6s%11s%10d%15s%15s", j + 1, table_output[j].seller_tb.name, table_output[j].product_tb.name, table_output[j].product_tb.count, table_output[j].customer_tb.fio, table_output[j].helper_tb.fio);
+		printf("\n%2d%6s%11s%10d%15s%15s", j + 1, table_output[j].seller_tb.get_seller(), table_output[j].product_tb.get_product_name(), table_output[j].product_tb.get_product_count(), table_output[j].customer_tb.get_customer_fio(), table_output[j].helper_tb.get_helper());
 	}
 }
 

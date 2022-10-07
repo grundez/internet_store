@@ -20,6 +20,9 @@ public:
 	void table_input_customer(table* table_main, customer* customer_help_table, customer* customer_main);
 	void table_input_helper(table* table_main, helper* helper_help_table, helper* helper_main);
 	void table_output(table table_output[], int number);
+
+	table();
+	~table();
 };
 
 
