@@ -1,7 +1,10 @@
 #include "seller.h"
 
 
-void set_seller(seller *seller_main, const char* name, double mark, int *seller_i) {
+seller::seller(){}
+seller::~seller(){};
+
+void seller::set_seller(seller *seller_main, const char* name, double mark, int *seller_i) {
 	seller seller_help;
 	strcpy(seller_help.name, name);
 	seller_help.mark = mark;
@@ -9,7 +12,7 @@ void set_seller(seller *seller_main, const char* name, double mark, int *seller_
 	*seller_i+=1;
 }
 
-void input_seller(seller* seller_main, int seller_i) {
+void seller::input_seller(seller* seller_main, int seller_i) {
 	seller seller_help;
 	
 	printf("\nВведите название бренда, имя продавца или компанию: ");
@@ -27,10 +30,19 @@ void input_seller(seller* seller_main, int seller_i) {
 	seller->mark = mark;*/
 }
 
-void output_seller(seller seller[], int number) {
-	printf("<№><Продавец><Оценка>");
+void seller::output_seller(seller seller[], int number) {
+	printf("\n\n<№><Продавец><Оценка>");
 	for (int j = 0; j < number; j++) {
 		printf("\n%2d%7s%10.2lf", j+1, seller[j].name, seller[j].mark);
 	}
 }
+
+char* seller::get_seller() {
+	return this->name;
+}
+
+void seller::set_seller_table(const char* name) {
+	strcpy(this->name, name);
+}
+
 

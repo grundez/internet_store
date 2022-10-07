@@ -1,6 +1,12 @@
 #include "helper.h"
 
-void set_helper(helper *helper_main, char const* fio, int help_count, int *helper_i){
+helper::helper() {
+}
+
+helper::~helper() {
+}
+
+void helper::set_helper(helper *helper_main, char const* fio, int help_count, int *helper_i){
 	helper helper_help;
 	strcpy(helper_help.fio, fio);
 	helper_help.help_count = help_count;
@@ -8,7 +14,7 @@ void set_helper(helper *helper_main, char const* fio, int help_count, int *helpe
 	*helper_i+=1;
 }
 
-void input_helper(helper* helper_main, int helper_i) {
+void helper::input_helper(helper* helper_main, int helper_i) {
 	helper helper_help;
 	
 	printf("\nВведите имя консультанта: ");
@@ -19,9 +25,16 @@ void input_helper(helper* helper_main, int helper_i) {
 	*helper_main = helper_help;
 }
 
-void output_helper(helper helper[], int number) {
-	printf("<№><Консультант><Количество ответов>");
+void helper::output_helper(helper helper[], int number) {
+	printf("\n\n<№><Консультант><Количество ответов>");
 	for (int j = 0; j < number; j++) {
 		printf("\n%2d%10s%12d", j + 1, helper[j].fio, helper[j].help_count);
 	}
+}
+
+char* helper::get_helper() {
+	return this->fio;
+}
+void helper::set_helper_table(const char* fio) {
+	strcpy(this->fio, fio);
 }
