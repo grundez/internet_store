@@ -10,7 +10,6 @@ void set_table(table* table_main, const char* seller_name, const char* product_n
 	strcpy(table_help.helper.fio, helper_fio);
 	*table_i+=1;
 	*table_main = table_help;
-	table_active = 4;
 }
 
 

@@ -15,3 +15,5 @@ void table_input_customer(customer* customer_help_table, customer* customer_main
 void table_input_helper(helper* helper_help_table, helper* helper_main);
 void table_output(table table_output[], int number);
 
+
+

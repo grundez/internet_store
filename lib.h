@@ -10,7 +10,7 @@
 #include "product.h"
 #include "seller.h"
 #include "helper.h"
-#include "table.h"
+
 
 
 int double_check(char a[]);
