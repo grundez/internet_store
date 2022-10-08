@@ -12,8 +12,8 @@ public:
 	void set_seller(const char* name, double mark, int* seller_i);
 	void input_seller(int seller_i);
 	void output_seller(int number);
-	char* get_seller();
-	void set_seller_table(const char* name);
+	char* get_seller_name();
+	void set_seller_name_table(const char* name);
 };
 
 

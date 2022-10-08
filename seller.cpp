@@ -24,15 +24,15 @@ void seller::input_seller(int seller_i) {
 void seller::output_seller(int number) {
 	printf("\n\n<№><Продавец><Оценка>");
 	for (int j = 0; j < number; j++) {
-		printf("\n%2d%7s%10.2lf", j+1, (this+j)->name, (this + j)->mark);
+		printf("\n%2d%10s%10.2lf", j+1, (this+j)->name, (this + j)->mark);
 	}
 }
 
-char* seller::get_seller() {
+char* seller::get_seller_name() {
 	return this->name;
 }
 
-void seller::set_seller_table(const char* name) {
+void seller::set_seller_name_table(const char* name) {
 	strcpy(this->name, name);
 }
 

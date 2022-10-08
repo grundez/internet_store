@@ -33,6 +33,6 @@ void helper::output_helper(int number) {
 char* helper::get_helper_fio() {
 	return this->fio;
 }
-void helper::set_helper_table(const char* fio) {
+void helper::set_helper_fio_table(const char* fio) {
 	strcpy(this->fio, fio);
 }

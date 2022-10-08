@@ -22,6 +22,10 @@ int main()
 			printf("\t2  Вывод списка\n");
 			printf("\n\tДля выхода нажмите ESC\n");
 			//table->set_table("nike", "air monarch", 2, "Matvey", "-", &table_i);
+			//seller->set_seller("b", 4.5, &seller_i);
+			//customer->set_customer("abs", &customer_i);
+			//product->set_product("bbbbbb", 535532, 2, 1313131, &product_i);
+			//helper->set_helper("xxxxxx", 5, &helper_i);
 			switch (_getch()) {
 			case '1': {
 				system("cls"); 
@@ -35,7 +39,6 @@ int main()
 				switch (_getch()) {
 				case '1': { 
 					system("cls");
-					//set_seller(&seller[seller_i], "b", 4.5, &seller_i);
 					do {
 						seller->input_seller(seller_i);
 						seller_i++;
@@ -46,7 +49,6 @@ int main()
 				}
 				case '2': { 
 					system("cls");
-					//customer->set_customer("abs", &customer_i);
 					do {
 						customer->input_customer(customer_i);
 						customer_i++;
@@ -57,7 +59,6 @@ int main()
 				}
 				case '3': { 
 					system("cls");
-					//set_product(&product[product_i], "bbbbbb", 535532, 2, 1313131, &product_i);
 					do { 
 						product->input_product(product_i); 
 						product_i++;
@@ -68,7 +69,6 @@ int main()
 				}
 				case '4': { 
 					system("cls");
-					//helper->set_helper("xxxxxx", 5, &helper_i);
 					do {
 						helper->input_helper(helper_i);
 						helper_i++;
@@ -81,7 +81,7 @@ int main()
 					system("cls");
 
 					do {
-						table->table_input(customer_i, seller_i, product_i, helper_i, table_i);
+						table->table_input(customer_i, seller_i, product_i, helper_i, table_i, seller, product, customer, helper);
 						
 						/*seller->output_seller(seller_i);
 						printf("\n\nВведите номер продавца: ");
@@ -178,7 +178,7 @@ int main()
 				}
 				case '5': {
 					system("cls");			//ВЫВОД ТАБЛИЦЫ
-					table->table_output(table, table_i);
+					table->table_output(table_i);
 					break;
 				}
 				case 27: 

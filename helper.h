@@ -16,6 +16,6 @@ public:
 	void output_helper(int number);
 
 	char* get_helper_fio();
-	void set_helper_table(const char* fio);
+	void set_helper_fio_table(const char* fio);
 };
 
