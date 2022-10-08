@@ -12,9 +12,9 @@ private:
 public:
 	customer();
 	~customer();
-	void set_customer(customer* customer, const char* fio, int* customer_i);
-	void input_customer(customer* customer, int customers_i);
-	void output_customer(customer customer[], int number);
+	void set_customer(const char* fio, int* customer_i);
+	void input_customer(int customers_i);
+	void output_customer(int number);
 
 	char* get_customer_fio();
 	void set_customer_fio_table(const char* fio);

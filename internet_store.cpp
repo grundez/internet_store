@@ -21,7 +21,7 @@ int main()
 			printf("\t1  Ввести новые данные\n");
 			printf("\t2  Вывод списка\n");
 			printf("\n\tДля выхода нажмите ESC\n");
-			//table->set_table(&table[table_i], "nike", "air monarch", 2, "Maksim", "-", &table_i);
+			//table->set_table("nike", "air monarch", 2, "Matvey", "-", &table_i);
 			switch (_getch()) {
 			case '1': {
 				system("cls"); 
@@ -35,9 +35,9 @@ int main()
 				switch (_getch()) {
 				case '1': { 
 					system("cls");
-					//set_seller(&seller[seller_i], "b", 4.5, &seller_i); конструктор
+					//set_seller(&seller[seller_i], "b", 4.5, &seller_i);
 					do {
-						seller->input_seller(&seller[seller_i], seller_i);
+						seller->input_seller(seller_i);
 						seller_i++;
 						printf("\nПродолжить - любая кнопка, выйти - ESC\n");
 					} while (_getch()!=27);
@@ -46,9 +46,9 @@ int main()
 				}
 				case '2': { 
 					system("cls");
-					//set_customer(&customer[customer_i], "abs", &customer_i); конструктор
+					//customer->set_customer("abs", &customer_i);
 					do {
-						customer->input_customer(&customer[customer_i], customer_i);
+						customer->input_customer(customer_i);
 						customer_i++;
 						printf("\nПродолжить - любая кнопка, выйти - ESC\n");
 					} while (_getch() != 27);
@@ -59,7 +59,7 @@ int main()
 					system("cls");
 					//set_product(&product[product_i], "bbbbbb", 535532, 2, 1313131, &product_i);
 					do { 
-						product->input_product(&product[product_i], product_i); 
+						product->input_product(product_i); 
 						product_i++;
 						printf("\nПродолжить - любая кнопка, выйти - ESC\n");
 					} while (_getch() != 27);
@@ -68,9 +68,9 @@ int main()
 				}
 				case '4': { 
 					system("cls");
-					//set_helper(&helper[helper_i], "xxxxxx", 5, &helper_i);
+					//helper->set_helper("xxxxxx", 5, &helper_i);
 					do {
-						helper->input_helper(&helper[helper_i], helper_i);
+						helper->input_helper(helper_i);
 						helper_i++;
 						printf("\nПродолжить - любая кнопка, выйти - ESC\n");
 					} while (_getch() != 27);
@@ -81,7 +81,9 @@ int main()
 					system("cls");
 
 					do {
-						seller->output_seller(seller, seller_i);
+						table->table_input(customer_i, seller_i, product_i, helper_i, table_i);
+						
+						/*seller->output_seller(seller_i);
 						printf("\n\nВведите номер продавца: ");
 						do {
 							f = 0;
@@ -93,7 +95,7 @@ int main()
 						} while (f == 1);
 						table->table_input_seller(&table[table_i], &table[table_i].seller_tb, &seller[number_seller - 1]);
 
-						customer->output_customer(customer, customer_i);
+						customer->output_customer(customer_i);
 						printf("\n\nВведите номер покупателя: ");
 						do {
 							f = 0;
@@ -105,7 +107,7 @@ int main()
 						} while (f == 1);
 						table->table_input_customer(&table[table_i], &table[table_i].customer_tb, &customer[number_customer - 1]);
 
-						product->output_product(product, product_i);
+						product->output_product(product_i);
 						printf("\n\nВведите номер товара: ");
 						do {
 							f = 0;
@@ -117,7 +119,7 @@ int main()
 						} while (f == 1);
 						table->table_input_product(&table[table_i], &table[table_i].product_tb, &product[number_product - 1]);
 
-						helper->output_helper(helper, helper_i);
+						helper->output_helper(helper_i);
 						printf("\n\nВведите номер консультанта: ");
 						do {
 							f = 0;
@@ -127,7 +129,7 @@ int main()
 								f = 1;
 							}
 						} while (f == 1);
-						table->table_input_helper(&table[table_i], &table[table_i].helper_tb, &helper[number_helper - 1]);
+						table->table_input_helper(&table[table_i], &table[table_i].helper_tb, &helper[number_helper - 1]);*/
 
 						table_i++;
 						printf("\nПродолжить - любая кнопка, выйти - ESC\n");
@@ -156,22 +158,22 @@ int main()
 				switch (_getch()) {
 				case '1': { 
 					system("cls");
-					seller->output_seller(seller, seller_i);
+					seller->output_seller(seller_i);
 					break;
 				}
 				case '2': { 
 					system("cls");
-					customer->output_customer(customer, customer_i);
+					customer->output_customer(customer_i);
 					break;
 				}
 				case '3': { 
 					system("cls");
-					product->output_product(product, product_i);
+					product->output_product(product_i);
 					break;
 				}
 				case '4': {
 					system("cls");
-					helper->output_helper(helper, helper_i);
+					helper->output_helper(helper_i);
 					break;
 				}
 				case '5': {

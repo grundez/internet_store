@@ -6,16 +6,13 @@ customer::customer() {
 customer::~customer() {
 }
 
-void customer::set_customer(customer *customer_main, const char* fio, int *customer_i) {
-	
-	customer customer_help;
-	strcpy(customer_help.fio, fio);
-	customer_help.id = *customer_i+1;
-	*customer_main = customer_help;
+void customer::set_customer(const char* fio, int *customer_i) {
+	strcpy((this+*customer_i)->fio, fio);
+	(this + *customer_i)->id = *customer_i+1;
 	*customer_i += 1;
 }
 
-void customer::input_customer(customer* customer, int customers_i) {
+void customer::input_customer(int customer_i) {
 	char fio[MAX];
 	int f;
 	do {
@@ -24,15 +21,14 @@ void customer::input_customer(customer* customer, int customers_i) {
 		scanf("%s", fio);
 		f = str_check(fio);
 	} while (f == 1);
-	
-	strcpy(customer->fio, fio);
-	customer->id = customers_i + 1;
+	strcpy((this+customer_i)->fio, fio);
+	(this + customer_i)->id = customer_i + 1;
 }
 
-void customer::output_customer(customer customer[], int number) {
+void customer::output_customer(int number) {
 	printf("\n\n<id> <ÔÈÎ>");
 	for (int j = 0; j < number; j++) {
-		printf("\n%2d%7s", customer[j].id, customer[j].fio);
+		printf("\n%2d%7s", (this+j)->id, (this + j)->fio);
 	}
 }
 

@@ -4,36 +4,27 @@
 seller::seller(){}
 seller::~seller(){};
 
-void seller::set_seller(seller *seller_main, const char* name, double mark, int *seller_i) {
-	seller seller_help;
-	strcpy(seller_help.name, name);
-	seller_help.mark = mark;
-	*seller_main = seller_help;
+void seller::set_seller(const char* name, double mark, int *seller_i) {
+	strcpy((this+*seller_i)->name, name);
+	(this + *seller_i)->mark = mark;
 	*seller_i+=1;
 }
 
-void seller::input_seller(seller* seller_main, int seller_i) {
-	seller seller_help;
-	
+void seller::input_seller(int seller_i) {
+	char name[MAX];
+	double mark;
 	printf("\nВведите название бренда, имя продавца или компанию: ");
-	scanf("%s", seller_help.name);
+	scanf("%s", name);
 	printf("Введите оценку работы продавца: ");
-	scanf("%lf", &seller_help.mark);
-	*seller_main = seller_help;
-	
-	
-	/*printf("\nВведите название бренда, имя продавца или компанию: ");
-	scanf("%s",name);
-	printf("Введите оценку работы продавца: ");					//альтернативный способ заполнения массива
 	scanf("%lf", &mark);
-	strcpy(seller->name, name);
-	seller->mark = mark;*/
+	strcpy((this + seller_i)->name, name);
+	(this + seller_i)->mark = mark;
 }
 
-void seller::output_seller(seller seller[], int number) {
+void seller::output_seller(int number) {
 	printf("\n\n<№><Продавец><Оценка>");
 	for (int j = 0; j < number; j++) {
-		printf("\n%2d%7s%10.2lf", j+1, seller[j].name, seller[j].mark);
+		printf("\n%2d%7s%10.2lf", j+1, (this+j)->name, (this + j)->mark);
 	}
 }
 

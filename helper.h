@@ -11,11 +11,11 @@ private:
 public:
 	helper();
 	~helper();
-	void set_helper(helper* helper_main, char const* fio, int help_count, int* helper_i);
-	void input_helper(helper* helper_main, int helper_i);
-	void output_helper(helper helper[], int number);
+	void set_helper(char const* fio, int help_count, int* helper_i);
+	void input_helper(int helper_i);
+	void output_helper(int number);
 
-	char* get_helper();
+	char* get_helper_fio();
 	void set_helper_table(const char* fio);
 };
 
