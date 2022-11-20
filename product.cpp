@@ -2,60 +2,40 @@
 #include "lib.h"
 #define MAX 100
 
+product::product(string name, float price, int count, int id) {
+	product_name = name;
+	product_price = price;
+	product_count = count;
+	product_id = id;
+}
 product::product(){
+	product_name = "Товар0";
+	product_price = 0;
+	product_count = 0;
+	product_id = 0000;
 }
+
 product::~product() {
-};
-
-void product::set_product(const char* name, double price, int count, int id, int* product_i) {
-	strcpy((this + *product_i)->name, name);
-	(this+ *product_i)->price = price;
-	(this + *product_i)->count = count;
-	(this + *product_i)->id = id;
-	*product_i += 1;
 }
 
-void product::input_product(int product_i) {
-	char name[MAX];
-	double price;
-	int count;
-	int id;
-	printf("\nДля остановки нажмите ESC");
+
+void product::input_product() {
 	printf("\nВведите название товара: ");
-	scanf("%s", name);
+	getline(cin, product_name);
 	printf("Введите цену товара: ");
-	scanf("%lf", &price); 
+	cin >> product_price;
+	while (getchar() != '\n');
 	printf("Введите количество товара: ");
-	scanf("%d", &count); 
+	cin >> product_count;
+	while (getchar() != '\n');
 	printf("Введите артикул товара: ");
-	scanf("%d", &id);
-
-	strcpy((this + product_i)->name, name);
-	(this + product_i)->price = price;
-	(this + product_i)->count = count;
-	(this + product_i)->id = id;
+	cin >> product_id;
+	while (getchar() != '\n');
 }
 
 
-void product::output_product(int number) {
-	printf("\n\n<№><Название товара><Цена товара><Количество товара><Артикул товара>");
-	for (int j = 0; j < number; j++) {
-		printf("\n%3d%12s%15.2lf%15d%15d", j + 1, (this+j)->name, (this + j)->price, (this + j)->count, (this + j)->id);
-	}
+void product::output_product() {
+	printf("\n<Название товара><Цена товара><Количество товара><Артикул товара>");
+	cout << "\n" << product_name << "\t\t" << product_price << "\t\t" << product_count << "\t\t" << product_id << endl;
 }
 
-int product::get_product_count() {
-	return this->count;
-}
-
-void product::set_product_count_table(int count) {
-	this->count = count;
-}
-
-char* product::get_product_name() {
-	return this->name;
-}
-
-void product::set_product_name_table(const char* name) {
-	strcpy(this->name, name);
-}

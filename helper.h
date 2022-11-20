@@ -5,17 +5,15 @@
 class helper{
 
 private:
-	char fio[MAX];
+	string helper_fio;
 	int help_count;
 
 public:
+	helper(string name, int help_count);
 	helper();
 	~helper();
-	void set_helper(char const* fio, int help_count, int* helper_i);
-	void input_helper(int helper_i);
-	void output_helper(int number);
-
-	char* get_helper_fio();
-	void set_helper_fio_table(const char* fio);
+	
+	void input_helper();
+	void output_helper();
 };
 

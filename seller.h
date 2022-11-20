@@ -4,16 +4,14 @@
 
 class seller {
 private:
-	char name[MAX / 2];
-	double mark; //оценка продавца
+	string seller_name;
+	double seller_mark; //оценка продавца
 public:
+	seller(string name, char mark);
 	seller();
 	~seller();
-	void set_seller(const char* name, double mark, int* seller_i);
-	void input_seller(int seller_i);
-	void output_seller(int number);
-	char* get_seller_name();
-	void set_seller_name_table(const char* name);
+	void input_seller();
+	void output_seller();
 };
 
 

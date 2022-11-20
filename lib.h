@@ -5,7 +5,11 @@
 #include <string.h>
 #include <Windows.h>
 #include <conio.h>
+#include <string>
+#include <iostream>
+#include <clocale>
 
+using namespace std;
 int double_check(char a[]);
 int int_check(char a[]);
 int str_check(char str[]);

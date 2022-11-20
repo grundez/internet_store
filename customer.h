@@ -6,17 +6,15 @@
 class customer {
 
 private:
-	char fio[MAX/2];
-	int id;
+	string customer_fio;
+	int customer_id;
 
 public:
+	customer(int id, string name);
 	customer();
 	~customer();
-	void set_customer(const char* fio, int* customer_i);
-	void input_customer(int customers_i);
-	void output_customer(int number);
-
-	char* get_customer_fio();
-	void set_customer_fio_table(const char* fio);
+	
+	void input_customer();
+	void output_customer();
 };
 
