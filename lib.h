@@ -8,7 +8,6 @@
 #include <string>
 #include <iostream>
 #include <clocale>
-
 using namespace std;
 int double_check(char a[]);
 int int_check(char a[]);

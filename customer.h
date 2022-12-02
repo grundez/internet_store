@@ -4,11 +4,11 @@
 
 
 class customer {
-
+	friend class record;
 private:
 	string customer_fio;
 	int customer_id;
-
+	static int customers_counter;
 public:
 	customer(int id, string name);
 	customer();
@@ -16,5 +16,8 @@ public:
 	
 	void input_customer();
 	void output_customer();
+	static int get_count();
 };
+
+
 

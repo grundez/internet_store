@@ -1,13 +1,17 @@
 #include "customer.h"
 #include "lib.h"
 
+int customer::customers_counter = 0;
+
 customer::customer(int id, string name) {
 	customer_id = id;
 	customer_fio = name;
+	customers_counter++;
 }
 customer::customer() {
 	customer_id = 0;
 	customer_fio = "ÿ‡È‰ÛÓ‚Ã»";
+	customers_counter++;
 }
 customer::~customer() {
 }
@@ -23,8 +27,15 @@ void customer::input_customer() {
 void customer::output_customer() {
 	printf("\n<id> <‘»Œ>");
 	cout << "\n" << customer_id << ' ' << customer_fio << endl;
-	
 }
+
+int customer::get_count() {
+	return customers_counter;
+}
+
+
+
+
 
 
 

@@ -18,6 +18,16 @@ public:
 	record();
 	void record_input();
 	void record_output();
+	product& get_product();
+	customer& get_customer();
+	helper& get_helper();
+	seller& get_seller();
+	
+	int* get_productcount();
+	float get_summ_product_price();
+
+	int operator+();
+	record operator+(const record& C);
 };
 
 

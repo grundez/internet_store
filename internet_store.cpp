@@ -5,12 +5,14 @@
 int main()
 {
     int count;
-    record record1, * records[5];
+    //record record1, * records[5];
     customer Customer(23, "ПетровАБ");
     helper Helper("Помощник1", 1);
     seller Seller("Продавец1", 1);
-    product Product("Продукт1", 111, 1, 1111);
-    record record3(Customer, Helper, Seller, Product);
+    product Product("Продукт1", 12500, 2, 1111);
+    /*record record3(Customer, Helper, Seller, Product);
+
+    //customer_helper::get_customer_count();
 
     cout << "Вывод сделок, созданных конструкторами:\n" << endl;
     record1.record_output();
@@ -43,6 +45,20 @@ int main()
     for (int i = 0; i < 2; i++) {
         records[i]->record_output();
         cout << endl;
-    }
-	return 0;
+    } */
+
+    
+    
+    record record1(Customer, Helper, Seller, Product);
+    record* Record = new record;
+    *Record = record1;
+    
+    cout << "\nСтоймость всех товаров через *: " << (*Record).get_summ_product_price() << endl;
+	
+    product product1("Куртка", 5500, 2, 155);
+    product product2("Шапка", 1200, 1, 10);
+    product1.compare_product(product2);
+    
+    cout << "\nКоличетсво покупателей: " << Customer.get_count() << endl;
+    return 0;
 }

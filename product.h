@@ -3,6 +3,7 @@
 #define MAX 100
 
 class product {
+	friend class record;
 private:
 	string product_name;
 	float product_price;
@@ -10,10 +11,14 @@ private:
 	int product_id; //артикул товара
 
 public:
+	static int product_counter;
 	product(string name, float price, int count, int id);
 	product();
 	~product();
 	void input_product();
 	void output_product();
+	product& operator++(int);
+	void compare_product(product& C);
+	static int get_count();
 };
 
