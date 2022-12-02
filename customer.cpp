@@ -10,7 +10,7 @@ customer::customer(int id, string name) {
 }
 customer::customer() {
 	customer_id = 0;
-	customer_fio = "Ўайдуровћ»";
+	customer_fio = "нет имени";
 	customers_counter++;
 }
 customer::~customer() {

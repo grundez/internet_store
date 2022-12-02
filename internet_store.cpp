@@ -59,6 +59,7 @@ int main()
     product product2("Шапка", 1200, 1, 10);
     product1.compare_product(product2);
     
-    cout << "\nКоличетсво покупателей: " << Customer.get_count() << endl;
+    
+    cout << "\nКоличетсво созданных товаров: " << Product.get_count() << endl;
     return 0;
 }
