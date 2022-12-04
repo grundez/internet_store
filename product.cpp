@@ -24,11 +24,20 @@ product::~product() {
 
 
 void product::input_product() {
+	int price;
 	printf("\nВведите название товара: ");
 	getline(cin, product_name);
 	printf("Введите цену товара: ");
-	cin >> product_price;
-	while (getchar() != '\n');
+	cin >> price;
+	try {
+		
+		while (getchar() != '\n');
+		if (price > 50000000 || price < 1) throw price;
+		product_price = price;
+	}
+	catch(const int) {
+		cout << "Неправильно установлена цена товара" << endl;
+	}
 	printf("Введите количество товара: ");
 	cin >> product_count;
 	while (getchar() != '\n');
@@ -63,4 +72,5 @@ void product::compare_product(product& C) {
 int product::get_count(){
 	return product_counter;
 }
+
 

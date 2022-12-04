@@ -14,6 +14,7 @@ customer::customer() {
 	customers_counter++;
 }
 customer::~customer() {
+	customers_counter--;
 }
 
 void customer::input_customer() {
