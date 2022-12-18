@@ -71,6 +71,9 @@ void product::compare_product(product& C) {
 int product::get_count(){
 	return product_counter;
 }
+string product::get_product_name() {
+	return product_name;
+}
 
 void product::print()
 {

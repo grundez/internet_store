@@ -20,7 +20,10 @@ public:
 	product& operator++(int);
 	void compare_product(product& C);
 	static int get_count();
+	string get_product_name();
 
 	virtual void print();
+
+
 };
 

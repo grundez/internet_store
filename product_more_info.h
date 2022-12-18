@@ -2,7 +2,7 @@
 #include "lib.h"
 #include "product.h"
 
-class product_more_info: product {
+class product_more_info: public product {
 protected:
 	string day;
 	string month;

@@ -68,18 +68,18 @@ int main()
     return 0;
     */
 
-    customer Customer1;
-    customer Customer2(123, "ШайдуровМИ");
+    product pr1("Куртка", 12500, 1, 123);
+    product_more_info pr2("Ааа", 13000, 1, 155, "02", "03", "2022", 1300);
     
     vector<string> fioCustomer;
-    fioCustomer.insert(fioCustomer.begin(), Customer1.get_customer_fio());
-    fioCustomer.push_back(Customer2.get_customer_fio());
+    fioCustomer.insert(fioCustomer.begin(), pr1.get_product_name());
+    fioCustomer.push_back(pr2.get_product_name());
 
     
     ////////////////// ПОИСК В КОНТЕЙНЕРЕ VECTOR
     for (string fio : fioCustomer) {
-        if (fio == "ШайдуровМИ") {
-            cout << "\nНайден!\n" << endl;
+        if (fio == "Куртка") {
+            cout << "\nНайдено!\n" << endl;
         }
     }
     
@@ -102,9 +102,9 @@ int main()
     
     ////////////////// ПОИСК В КОНТЕЙНЕРЕ SET ЧЕРЕЗ FIND
     set<string> fioCustomer_set;
-    fioCustomer_set.insert(fioCustomer_set.begin(), Customer1.get_customer_fio());
-    fioCustomer_set.insert(fioCustomer_set.end(), Customer2.get_customer_fio());
-    set<string>::iterator it = fioCustomer_set.find("ШайдуровМИ");
+    fioCustomer_set.insert(fioCustomer_set.begin(), pr1.get_product_name());
+    fioCustomer_set.insert(fioCustomer_set.end(), pr2.get_product_name());
+    set<string>::iterator it = fioCustomer_set.find("Куртка");
     cout << *it;
     
    
