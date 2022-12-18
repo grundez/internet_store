@@ -55,7 +55,7 @@ int main()
 
     //cout << "\nСтоймость всех товаров: " << (*Record).get_summ_product_price() << endl;
 
-    */
+    
     
     
     //////////виртуал функция
@@ -66,4 +66,46 @@ int main()
     prx->print();
     pry->print();
     return 0;
+    */
+
+    customer Customer1;
+    customer Customer2(123, "ШайдуровМИ");
+    
+    vector<string> fioCustomer;
+    fioCustomer.insert(fioCustomer.begin(), Customer1.get_customer_fio());
+    fioCustomer.push_back(Customer2.get_customer_fio());
+
+    
+    ////////////////// ПОИСК В КОНТЕЙНЕРЕ VECTOR
+    for (string fio : fioCustomer) {
+        if (fio == "ШайдуровМИ") {
+            cout << "\nНайден!\n" << endl;
+        }
+    }
+    
+    ///////////////// СОРТИРОВКА КОНТЕЙНЕРА VECTOR МЕТОДОМ ПУЗЫРЬКА
+    for (string fio : fioCustomer) {
+        int i = 0;
+        string help;
+        if (fioCustomer[i] > fioCustomer[i+1]) {
+            help = fioCustomer[i];
+            fioCustomer[i] = fioCustomer[i+1];
+            fioCustomer[i + 1] = help;
+        }
+        i++;
+    }
+
+    /////////////////// ВЫВОД КОНТЕЙНЕРА
+    for (string fio : fioCustomer) {
+        cout << fio << endl;
+    }
+    
+    ////////////////// ПОИСК В КОНТЕЙНЕРЕ SET ЧЕРЕЗ FIND
+    set<string> fioCustomer_set;
+    fioCustomer_set.insert(fioCustomer_set.begin(), Customer1.get_customer_fio());
+    fioCustomer_set.insert(fioCustomer_set.end(), Customer2.get_customer_fio());
+    set<string>::iterator it = fioCustomer_set.find("ШайдуровМИ");
+    cout << *it;
+    
+   
 }

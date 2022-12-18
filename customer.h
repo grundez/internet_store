@@ -17,6 +17,7 @@ public:
 	void input_customer();
 	void output_customer();
 	static int get_count();
+	string get_customer_fio();
 };
 
 

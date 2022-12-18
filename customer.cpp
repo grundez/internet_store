@@ -34,6 +34,10 @@ int customer::get_count() {
 	return customers_counter;
 }
 
+string customer::get_customer_fio() {
+	return customer_fio;
+}
+
 
 
 
