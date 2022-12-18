@@ -36,6 +36,9 @@
     <ClCompile Include="helper.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="product_more_info.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">
@@ -54,6 +57,9 @@
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="helper.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="product_more_info.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

@@ -29,9 +29,8 @@ void product::input_product() {
 	getline(cin, product_name);
 	printf("Введите цену товара: ");
 	cin >> price;
+	while (getchar() != '\n');
 	try {
-		
-		while (getchar() != '\n');
 		if (price > 50000000 || price < 1) throw price;
 		product_price = price;
 	}
@@ -48,7 +47,7 @@ void product::input_product() {
 
 
 void product::output_product() {
-	printf("\n<Название товара><Цена товара><Количество товара><Артикул товара>");
+	cout <<"\n<Название товара><Цена товара><Количество товара><Артикул товара>";
 	cout << "\n" << product_name << "\t\t" << product_price << "\t\t" << product_count << "\t\t" << product_id << endl;
 }
 
@@ -73,4 +72,7 @@ int product::get_count(){
 	return product_counter;
 }
 
-
+void product::print()
+{
+	cout << endl << "id производного продукта : " << product_id;
+}

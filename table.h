@@ -4,6 +4,7 @@
 #include "product.h"
 #include "seller.h"
 #include "helper.h"
+#include "product_more_info.h"
 
 class record{
 	

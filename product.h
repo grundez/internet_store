@@ -4,7 +4,7 @@
 
 class product {
 	friend class record;
-private:
+protected:
 	string product_name;
 	float product_price;
 	int product_count;
@@ -20,5 +20,7 @@ public:
 	product& operator++(int);
 	void compare_product(product& C);
 	static int get_count();
+
+	virtual void print();
 };
 

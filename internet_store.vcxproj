@@ -131,6 +131,7 @@
     <ClCompile Include="customer.cpp" />
     <ClCompile Include="lib.cpp" />
     <ClCompile Include="product.cpp" />
+    <ClCompile Include="product_more_info.cpp" />
     <ClCompile Include="seller.cpp" />
     <ClCompile Include="helper.cpp" />
     <ClCompile Include="table.cpp" />
@@ -140,6 +141,7 @@
     <ClInclude Include="helper.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="product.h" />
+    <ClInclude Include="product_more_info.h" />
     <ClInclude Include="seller.h" />
     <ClInclude Include="table.h" />
   </ItemGroup>
